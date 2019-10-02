@@ -1,0 +1,54 @@
+
+body{
+    background-image: url("../images/vaio_hard_edge_@2X.png");
+   
+}
+
+
+
+  .navbar-brand{
+        background-color: orange;
+        color: aliceblue;
+        width: 500px;
+        height: 100px;
+        font-size: 5;
+  }
+
+  /*///////////////////row1///////////////////////////*/
+
+  .myclass{
+      background-color: rgb(250, 235, 224);
+      color:green;
+      height: 600px;
+      margin-left: 40px
+    
+  }
+
+  .col-12{
+      padding: 40px 10px 80px 10px;
+  }
+
+
+
+
+  /*///////////////////row2///////////////////////////*/
+
+  .applegreen{
+    background-color: rgb(12, 168, 12);
+    margin: 20px 0px;
+}
+
+  .turquoise{
+      background-color: turquoise;
+      margin: 20px;
+      
+  }
+
+  .row.row-2{
+      margin: 5px 20px;
+       grid-gap: 1em;
+       height: 200px;
+    
+  }
+  
+  
