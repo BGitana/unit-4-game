@@ -79,7 +79,6 @@ $(".card-body1").on("click", function() {
   }
 });
 
-
 $(".card-body2").on("click", function() {
   //   alert("You random crystal BLACK number is " + card2num + "!");
   totalScore += card2num;
