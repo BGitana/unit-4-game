@@ -45,7 +45,7 @@ $(".card-body1").on("click", function() {
   //   alert("You random crystal PINK number is " + card1num + "!");
   // Adding a caed1num value to the other Total Score
   totalScore += card1num;
-  //   alert("New score: " + totalScore);
+    // alert("New score: " + totalScore);
   document.getElementById("totalScore").innerHTML = `${totalScore}`;
   // setting conditional to compare total score and goal number
   if (totalScore === goalNumber) {
