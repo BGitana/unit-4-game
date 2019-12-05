@@ -33,49 +33,55 @@ function newGame() {
   // console.log(card3);
   card4num = Math.floor(Math.random() * 12) + 1;
   // console.log(card4);
+  totalScore = 0;
+  document.getElementById("totalScore").innerHTML = `${totalScore}`;
 }
 newGame();
+
+// function playAgainBtn() {
+//   $('<button id="play-again">PLAY AGAIN</button>').appendTo(".playBtn");
+
+// };
+
+// $(".playBtn button").click(newGame);
+// $("#play-again").on('click', function(){
+//   console.log("botton workig?")
+//   newGame();
+// });
+
+function youWin() {
+  alert("You win!");
+  wins += 1;
+  document.getElementById("wins").innerHTML = `${wins}`;
+  newGame();
+}
+
+function youLoose() {
+  alert("You lost! Try again!");
+  // console.log(totalScore);
+  // document.getElementById("totalScore").innerHTML = `You Lose!!!`;
+  losses += 1;
+  document.getElementById("losses").innerHTML = `${losses}`;
+  // alert(`${totalScore}`);
+  newGame();
+  // playAgainBtn();
+}
 
 // Eventually this will allow us to change the HTML to match the value in the JavaScript.
 document.getElementById("totalScore").innerHTML = `${totalScore}`;
 
 // Here we created an on-click event that responds to button clicks of the crystal image.
 $(".card-body1").on("click", function() {
-  // Clicking the button triggers an alert message.
-  //   alert("You random crystal PINK number is " + card1num + "!");
-  // Adding a caed1num value to the other Total Score
   totalScore += card1num;
-    // alert("New score: " + totalScore);
   document.getElementById("totalScore").innerHTML = `${totalScore}`;
-  // setting conditional to compare total score and goal number
+
   if (totalScore === goalNumber) {
-    // document.getElementById("wins").innerHTML = `${wins}`;
-    alert("You win!");
-    // Adding total numbers of of "wins" like in loops '++' this is '+=1'
-    wins += 1;
-    // resetting total score back to 0 after the win
-    totalScore = 0;
-    // printing updated wins om HTML
-    document.getElementById("wins").innerHTML = `${wins}`;
-    // printing updated Total Score om HTML
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-    newGame();
+    // whatever happens when you win
+    youWin();
   }
   // If the user's counter ever exceeds the targetNumber...
-  else if (totalScore >= goalNumber) {
-    // Then they are alerted with a loss.
-    // document.getElementById("losses").innerHTML = `${losses}`;
-    alert("You lose!! Try again!");
-    // Adding total numbers of of "losses" like in loops '++' this is '+=1'
-    losses += 1;
-    // resetting total core back to 0 after the loss
-    totalScore = 0;
-    // printing updated wins om HTML
-    document.getElementById("losses").innerHTML = `${losses}`;
-    // printing updated Total Score om HTML
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-
-    newGame();
+  else if (totalScore > goalNumber) {
+    youLoose();
   }
 });
 
@@ -85,20 +91,10 @@ $(".card-body2").on("click", function() {
   document.getElementById("totalScore").innerHTML = `${totalScore}`;
 
   if (totalScore === goalNumber) {
-    alert("You win!");
-    wins += 1;
-    totalScore = 0;
-    document.getElementById("wins").innerHTML = `${wins}`;
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-    newGame();
+    // whatever happens when you win
+    youWin();
   } else if (totalScore >= goalNumber) {
-    alert("You lose!!");
-    losses += 1;
-    totalScore = 0;
-    document.getElementById("losses").innerHTML = `${losses}`;
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-
-    newGame();
+    youLoose();
   }
 });
 
@@ -108,20 +104,9 @@ $(".card-body3").on("click", function() {
   document.getElementById("totalScore").innerHTML = `${totalScore}`;
 
   if (totalScore === goalNumber) {
-    alert("You win!");
-    wins += 1;
-    totalScore = 0;
-    document.getElementById("wins").innerHTML = `${wins}`;
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-    newGame();
+    youWin();
   } else if (totalScore >= goalNumber) {
-    alert("You lose!!");
-    losses += 1;
-    totalScore = 0;
-    document.getElementById("losses").innerHTML = `${losses}`;
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-
-    newGame();
+    youLoose();
   }
 });
 
@@ -130,19 +115,8 @@ $(".card-body4").on("click", function() {
   totalScore += card4num;
   document.getElementById("totalScore").innerHTML = `${totalScore}`;
   if (totalScore === goalNumber) {
-    alert("You win!");
-    wins += 1;
-    totalScore = 0;
-    document.getElementById("wins").innerHTML = `${wins}`;
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-    newGame();
+    youWin();
   } else if (totalScore >= goalNumber) {
-    alert("You lose!!");
-    losses += 1;
-    totalScore = 0;
-    document.getElementById("losses").innerHTML = `${losses}`;
-    document.getElementById("totalScore").innerHTML = `${totalScore}`;
-
-    newGame();
+    youLoose();
   }
 });
